@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Label, Pie, PieChart } from "recharts";
+import { Pie, PieChart } from "recharts";
 import {
   ChartConfig,
   ChartContainer,
@@ -54,7 +54,7 @@ export default function AppPieChart() {
   return (
     <div>
       <h1 className="text-lg font-medium mb-6">Browser Users</h1>
-      <div className="relative mx-auto aspect-square max-h-[200px] w-full">
+      <div className="relative mx-auto aspect-square max-h-[250px] w-full">
         {/* Label di tengah */}
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
           <span className="text-2xl font-bold text-foreground">
@@ -72,7 +72,7 @@ export default function AppPieChart() {
               data={chartData}
               dataKey="visitors"
               nameKey="browser"
-              innerRadius={50}
+              innerRadius={60}
               strokeWidth={5}
             >
               {/* <Label
@@ -112,7 +112,7 @@ export default function AppPieChart() {
         <div className="flex items-center gap-2 leading-none font-medium text-center justify-center">
           Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
-        <div className="text-muted-foreground leading-none flex justify-center">
+        <div className="text-muted-foreground leading-none flex justify-center text-center">
           Showing total visitors for the last 6 months
         </div>
       </div>

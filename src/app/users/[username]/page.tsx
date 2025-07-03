@@ -13,9 +13,15 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { BadgeCheck, Candy, Shield, Star } from "lucide-react";
+import { BadgeCheck, Candy, Pencil, Shield, Star } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
+import {
+  Sheet,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import EditUser from "@/components/EditUser";
 
 const UsernamePage = () => {
   return (
@@ -69,7 +75,7 @@ const UsernamePage = () => {
                 <HoverCardContent>
                   <h1 className="font-bold mb-2">Admin</h1>
                   <p className="text-sm text-muted-foreground">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   </p>
                 </HoverCardContent>
               </HoverCard>
@@ -84,7 +90,7 @@ const UsernamePage = () => {
                 <HoverCardContent>
                   <h1 className="font-bold mb-2">Awarded</h1>
                   <p className="text-sm text-muted-foreground">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   </p>
                 </HoverCardContent>
               </HoverCard>
@@ -107,34 +113,46 @@ const UsernamePage = () => {
           </div>
           {/* information container */}
           <div className="bg-primary-foreground p-4 rounded-lg">
-          <h1 className="text-xl font-semibold">User Information</h1>
-          <div className="space-y-4 mt-4">
-          <div className="flex flex-col gap-2 mb-8">
-            <p className="text-sm text-muted-foreground">profile completion</p>
-            <Progress value={60} />
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Username:</span>
-            <span>johndoe</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Email:</span>
-            <span>johndoe@gmail.com</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Phone number:</span>
-            <span>+6285-0050-5933</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Location:</span>
-            <span>Tokyo, JP</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="font-bold">Role:</span>
-            <Badge variant={'outline'}>Admin</Badge>
-          </div>
-          </div>
-          <p className="text-sm text-muted-foreground mt-4">Join on 2025.01.04</p>
+            <div className="flex justify-between items-center">
+              <h1 className="text-xl font-semibold">User Information</h1>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button><Pencil size={16} /></Button>
+                </SheetTrigger>
+                <EditUser/>
+              </Sheet>
+            </div>
+            <div className="space-y-4 mt-4">
+              <div className="flex flex-col gap-2 mb-8">
+                <p className="text-sm text-muted-foreground">
+                  profile completion
+                </p>
+                <Progress value={60} />
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Username:</span>
+                <span>johndoe</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Email:</span>
+                <span>johndoe@gmail.com</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Phone number:</span>
+                <span>+6285-0050-5933</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Location:</span>
+                <span>Tokyo, JP</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Role:</span>
+                <Badge variant={"outline"}>Admin</Badge>
+              </div>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Join on 2025.01.04
+            </p>
           </div>
           {/* card list container */}
           <div className="bg-primary-foreground p-4 rounded-lg">

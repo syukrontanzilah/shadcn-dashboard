@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import {
   Breadcrumb,
@@ -16,12 +17,11 @@ import {
 import { BadgeCheck, Candy, Pencil, Shield, Star } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import {
-  Sheet,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import EditUser from "@/components/EditUser";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import AppLineChart from "@/components/AppLineChart";
 
 const UsernamePage = () => {
   return (
@@ -47,7 +47,7 @@ const UsernamePage = () => {
         <div className="w-full xl:w-1/3 space-y-6">
           {/* user badges container */}
           <div className="bg-primary-foreground p-4 rounded-lg">
-            <h1 className="text-xl font-semibold">user badges</h1>
+            <h1 className="text-xl font-semibold">User Badges</h1>
             <div className="flex gap-4 mt-4">
               {/* icon verify */}
               <HoverCard>
@@ -117,9 +117,11 @@ const UsernamePage = () => {
               <h1 className="text-xl font-semibold">User Information</h1>
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button><Pencil size={16} /></Button>
+                  <Button>
+                    <Pencil size={16} />
+                  </Button>
                 </SheetTrigger>
-                <EditUser/>
+                <EditUser />
               </Sheet>
             </div>
             <div className="space-y-4 mt-4">
@@ -163,9 +165,26 @@ const UsernamePage = () => {
         {/* RIGHT */}
         <div className="w-full xl:w-2/3  space-y-6">
           {/* card user */}
-          <div className="bg-primary-foreground p-4 rounded-lg">card user</div>
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
+            <div className="flex items-center gap-2">
+              <Avatar className="size-12">
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <h1 className="text-xl font-semibold">John Doe</h1>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+              temporibus mollitia exercitationem, deserunt sequi expedita?
+              Facere, libero cupiditate eos impedit vel laboriosam consequatur
+              earum reprehenderit. A fugiat iusto itaque neque!
+            </p>
+          </div>
           {/* chart container */}
-          <div className="bg-primary-foreground p-4 rounded-lg">chart</div>
+          <div className="bg-primary-foreground p-4 rounded-lg">
+          <h1 className="text-xl font-semibold mb-6">Chart Tracking</h1>
+            <AppLineChart/>
+          </div>
         </div>
       </div>
     </div>

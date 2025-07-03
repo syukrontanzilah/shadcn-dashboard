@@ -9,9 +9,11 @@ import {
   Inbox,
   Plus,
   Projector,
-  Search,
+  // Search,
   Settings,
   User2,
+  // User2Icon,
+  UserCircle2Icon,
 } from "lucide-react";
 import {
   Sidebar,
@@ -65,9 +67,9 @@ const items = [
     icon: Calendar,
   },
   {
-    title: "Search",
-    url: "/search",
-    icon: Search,
+    title: "Users",
+    url: "/users",
+    icon: UserCircle2Icon,
   },
   {
     title: "Settings",
@@ -109,7 +111,7 @@ const AppSidebar = () => {
                     </Link>
                   </SidebarMenuButton>
                   {item.title === "Inbox" && (
-                    <SidebarMenuBadge className="bg-blue-500 text-white text-xs">24</SidebarMenuBadge>
+                    <SidebarMenuBadge className="bg-blue-500 text-white text-xs hover:text-white">99+</SidebarMenuBadge>
                   )}
                 </SidebarMenuItem>
               ))}

@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Calendar,
+  // Calendar,
   ChevronDown,
   //   ChevronDown,
   ChevronUp,
@@ -14,6 +14,7 @@ import {
   User2,
   // User2Icon,
   UserCircle2Icon,
+  Wallet2,
 } from "lucide-react";
 import {
   Sidebar,
@@ -62,9 +63,9 @@ const items = [
     icon: Inbox,
   },
   {
-    title: "Calendar",
-    url: "/calendar",
-    icon: Calendar,
+    title: "Payments",
+    url: "/payments",
+    icon: Wallet2,
   },
   {
     title: "Users",

@@ -6,6 +6,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { cn } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import Link from "next/link";
 
 
 export type Payment = {
@@ -106,7 +107,11 @@ export const columns: ColumnDef<Payment>[] = [
               Copy payment ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem >View customer</DropdownMenuItem>
+            <DropdownMenuItem >
+              <Link href={'/users/123'}>
+              View customer
+              </Link>
+              </DropdownMenuItem>
             <DropdownMenuItem>View payment details</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
